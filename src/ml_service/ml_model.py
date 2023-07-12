@@ -52,10 +52,12 @@
 # model.save('my_model.h5')
 # with open('tokenizer.pickle', 'wb') as handle:
 #     pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#
+#
 # model = tf.keras.models.load_model('my_model.h5')
 # with open('tokenizer.pickle', 'rb') as f:
 #     loaded_tokenizer = pickle.load(f)
-
+#
 # my_reviews = ['the best film']
 # sample_conversion = keras.preprocessing.sequence.pad_sequences(loaded_tokenizer.texts_to_sequences(my_reviews))
 #
