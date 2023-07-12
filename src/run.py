@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 
-from api_service.routers import aggregated_router as identity_routers
+from src.api_service.routers import aggregated_router as identity_routers
 
 
 app = FastAPI(

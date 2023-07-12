@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from api_service.review.router import router as review_router
-from api_service.film.router import router as film_router
+from src.api_service.review.router import router as review_router
+from src.api_service.film.router import router as film_router
 
 
 aggregated_router = APIRouter()
