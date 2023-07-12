@@ -8,7 +8,7 @@ This solution used technologies such as: FastApi, PostgreSQL, Tensorflow. To tes
 ```
 $ git clone https://github.com/spacefellow/GreenatomTest
 Create .dbenv and .dev_env files in root folder
-$ cd greenatom
+$ cd GreenatomTest
 ```
 
 >.dev_env contains
