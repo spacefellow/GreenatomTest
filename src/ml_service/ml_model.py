@@ -7,16 +7,22 @@ import pickle
 
 def add_data(dir_path, arr_1, arr_2):
     for fname in os.listdir(dir_path + '\\neg'):
-        with open(train_dir + '\\neg\\' + fname, 'r', encoding='utf8') as f:
+        with open(dir_path + '\\neg\\' + fname, 'r', encoding='utf8') as f:
             arr_1.append(f.read())
         arr_2.append(0)
     for fname in os.listdir(dir_path + '\\pos'):
-        with open(train_dir + '\\pos\\' + fname, 'r', encoding='utf8') as f:
+        with open(dir_path + '\\pos\\' + fname, 'r', encoding='utf8') as f:
             arr_1.append(f.read())
         arr_2.append(1)
 
 
-origin_dir = 'C:\\programes\\greenatom\\src\\ml_service\\aclImdb'
+url = "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"
+
+dataset = tf.keras.utils.get_file("aclImdb_v1", url,
+                                  untar=True, cache_dir='.',
+                                  cache_subdir='')
+
+origin_dir = os.path.abspath('aclImdb')
 train_dir = origin_dir + '\\train'
 test_dir = origin_dir + '\\test'
 texts = []
@@ -45,6 +51,8 @@ model = tf.keras.Sequential([
     keras.layers.Dropout(0.2),
     keras.layers.Dense(1, activation='sigmoid')])
 
+model.summary()
+
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['acc'])
 
 history = model.fit(data, labels, epochs=10, batch_size=32, validation_split=0.2)
@@ -57,7 +65,7 @@ sequencesTest = tokenizer.texts_to_sequences(test_data)
 dataTest = keras.preprocessing.sequence.pad_sequences(sequencesTest, maxlen=maxlen)
 indicesTest = np.arange(dataTest.shape[0])
 np.random.shuffle(indicesTest)
-data_test = data[indicesTest]
+data_test = dataTest[indicesTest]
 labels_test = np.array(test_labels)[indicesTest]
 
 loss, accuracy = model.evaluate(data_test, labels_test)
