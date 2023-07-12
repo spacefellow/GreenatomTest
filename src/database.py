@@ -4,7 +4,7 @@ from sqlalchemy import MetaData
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-from src.config import DB_DRIVER, DB_CONNECTOR, DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
+from config import DB_DRIVER, DB_CONNECTOR, DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
 
 DATABASE_URL = "{}+{}://{}:{}@{}:{}/{}".format(
     DB_DRIVER, DB_CONNECTOR,

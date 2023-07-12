@@ -1,9 +1,7 @@
-from typing import Optional, Annotated
 from sqlalchemy import Column, ForeignKey, Integer, String, UUID, TEXT, Double
-from sqlalchemy.ext.asyncio import AsyncSession
 from uuid import uuid4
 
-from src.database import Base
+from database import Base
 
 
 class FilmModel(Base):

@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, insert
-from src.database import get_async_session
-from src.api_service.models import ReviewModel
-from src.api_service.schemas import ReviewSchema
-from src.ml_service.base_functions import add_score
+from database import get_async_session
+from api_service.models import ReviewModel
+from api_service.schemas import ReviewSchema
+from ml_service.base_functions import add_score
 
 router = APIRouter()
 
