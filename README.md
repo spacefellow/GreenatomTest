@@ -43,6 +43,8 @@ $ alembic upgrade head
 $ uvicorn main:app --reload
 ```
 
+At this point, the app runs at http://127.0.0.1:8000/
+
 ### Start the app in Docker
 
 >Download the code
