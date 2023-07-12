@@ -2,8 +2,8 @@
 include
 Lib
 Scripts
-.*env
 __pycache__/
 .idea
 pyvenv.cfg
-src/ml_service/my_model.h5
+.space
+Spacefile
