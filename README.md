@@ -85,8 +85,6 @@ $ CREATE DATABASE db_name;
 >Create alembic migrations in the backend_container and load data into the database
 ```
 $ docker-compose exec -it backend bash
-$ alembic init migrations
-$ alembic revision --autogenerate -m "initial"
 $ alembic upgrade HEAD
 ```
 
